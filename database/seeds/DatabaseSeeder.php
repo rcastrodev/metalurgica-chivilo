@@ -24,9 +24,10 @@ class DatabaseSeeder extends Seeder
         $administrator->givePermissionTo('user');
         
         $user = User::create([
-            'name'      =>  'pablo',
-            'password'  =>  Hash::make('123')
-        ]);
+            'name'      =>  env('ENV_NAME'),
+            'password'  =>  Hash::make(env('ENV_PASSWORD'))
+         ]);
+                
 
         $user->assignRole('Administrador');
         
